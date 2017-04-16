@@ -1,2 +1,6 @@
 # VideoSynopsis
 Web-based video synopsis system using Apache Spark
+
+Surveillance videos are big data, and people are usually interested in the moving targets of them. Since surveillance cameras often record with fixed scenes as backgrounds, the generated videos contain long period of clips without moving targets. Finding moving targets in such video clips will be manpower and time consuming. This project focuses on implementing a system using video synopsis algorithm to recombine the moving targets in a long surveillance video into a short video clip containing all moving targets.
+
+The project proposes a system that can be divided into two parts: the frontend web pages and the backstage processing algorithm based on Apache Spark. In the web pages, users can upload as well as download video clip. This project designs and implements a synopsis algorithm in the backstage which uses background subtraction to grab all the frames containing moving targets in a video and then concatenate all the frames into a new shorter clip. The algorithm connects to Spark cluster. After users upload a video to be condensed on web page, the algorithm will process it and return success information to users after generating the new video. Then users can download the new video from the download page.
